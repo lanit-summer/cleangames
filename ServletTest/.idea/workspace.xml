@@ -31,8 +31,21 @@
       <file leaf-file-name="Servlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Servlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72979796">
-              <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+            <state vertical-scroll-proportion="-0.37027708">
+              <caret line="134" column="32" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5978#5984#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/datamodellib.jar!/com/datamodel/datamodels/Game.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.8888888">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,33 +57,49 @@
         <entry file="file://$PROJECT_DIR$/src/DataBaseHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="428" column="25" selection-start-line="424" selection-start-column="16" selection-end-line="428" selection-end-column="90" />
+              <caret line="165" column="45" selection-start-line="165" selection-start-column="45" selection-end-line="165" selection-end-column="45" />
               <folding>
-                <marker date="1437568967223" expanded="true" signature="4941:4968" placeholder="select Name ..Parameters..." />
-                <marker date="1437568967223" expanded="true" signature="6198:6285" placeholder="insert into ..." />
-                <marker date="1437568967223" expanded="true" signature="7503:7554" placeholder="select ID fr..Team..." />
-                <marker date="1437568967223" expanded="true" signature="7706:7782" placeholder="insert into ..." />
-                <marker date="1437568967223" expanded="true" signature="8135:8190" placeholder="select ID fr..Transfer..." />
-                <marker date="1437568967223" expanded="true" signature="9433:9460" placeholder="select Name ..Parameters..." />
-                <marker date="1437568967223" expanded="true" signature="10874:10895" placeholder="select Name ..Team..." />
-                <marker date="1437568967223" expanded="true" signature="12330:12376" placeholder="select Name,..User..." />
-                <marker date="1437568967223" expanded="true" signature="13812:13869" placeholder="select count..Team..." />
-                <marker date="1437568967223" expanded="true" signature="14097:14152" placeholder="insert into ..." />
-                <marker date="1437568967223" expanded="true" signature="15596:15660" placeholder="update Team ..." />
-                <marker date="1437568967223" expanded="true" signature="16656:16709" placeholder="delete from ..." />
-                <marker date="1437568967223" expanded="true" signature="17688:17757" placeholder="insert into ..." />
-                <marker date="1437568967223" expanded="true" signature="18841:18916" placeholder="update Param..." />
-                <marker date="1437568967223" expanded="true" signature="20033:20097" placeholder="delete from ..." />
-                <marker date="1437568967223" expanded="true" signature="22404:22459" placeholder="select count..User..." />
-                <marker date="1437568967223" expanded="true" signature="22766:22868" placeholder="insert into ..." />
-                <marker date="1437568967223" expanded="true" signature="24675:24730" placeholder="select count..User..." />
-                <marker date="1437568967223" expanded="true" signature="25011:25066" placeholder="select Passw..User..." />
-                <marker date="1437568967223" expanded="true" signature="26620:26661" placeholder="select count..User..." />
-                <marker date="1437568967223" expanded="true" signature="26905:26948" placeholder="update User ..." />
-                <marker date="1437568967223" expanded="true" signature="28170:28216" placeholder="update User ..." />
-                <marker date="1437568967223" expanded="true" signature="29211:29303" placeholder="insert into ..." />
-                <marker date="1437568967223" expanded="true" signature="30413:30446" placeholder="select Name ..Team..." />
+                <element signature="imports" expanded="true" />
+                <element signature="method#main#0;class#DataBaseHelper#0" expanded="false" />
+                <element signature="e#4812#4821#0" expanded="true" />
+                <element signature="e#5478#5485#0" expanded="true" />
+                <marker date="1437737164417" expanded="true" signature="5126:5192" placeholder="select ID, P..Checkin..." />
+                <marker date="1437737164417" expanded="true" signature="5126:5205" placeholder="select ID, P..Checkin..." />
+                <marker date="1437737164417" expanded="true" signature="5573:5748" placeholder="select Check..CheckinItem..." />
+                <marker date="1437737164417" expanded="true" signature="7450:7537" placeholder="insert into ..." />
+                <marker date="1437737164417" expanded="true" signature="8755:8806" placeholder="select ID fr..Team..." />
+                <marker date="1437737164417" expanded="true" signature="8958:9034" placeholder="insert into ..." />
+                <marker date="1437737164417" expanded="true" signature="9387:9442" placeholder="select ID fr..Transfer..." />
+                <marker date="1437737164417" expanded="true" signature="10685:10712" placeholder="select Name ..Parameters..." />
+                <marker date="1437737164417" expanded="true" signature="12126:12147" placeholder="select Name ..Team..." />
+                <marker date="1437737164417" expanded="true" signature="13582:13628" placeholder="select Name,..User..." />
+                <marker date="1437737164417" expanded="true" signature="15065:15122" placeholder="select count..Team..." />
+                <marker date="1437737164417" expanded="true" signature="15350:15405" placeholder="insert into ..." />
+                <marker date="1437737164417" expanded="true" signature="16719:16783" placeholder="update Team ..." />
+                <marker date="1437737164417" expanded="true" signature="17778:17831" placeholder="delete from ..." />
+                <marker date="1437737164417" expanded="true" signature="18809:18878" placeholder="insert into ..." />
+                <marker date="1437737164417" expanded="true" signature="19962:20038" placeholder="update Param..." />
+                <marker date="1437737164417" expanded="true" signature="21154:21218" placeholder="delete from ..." />
+                <marker date="1437737164417" expanded="true" signature="23524:23579" placeholder="select count..User..." />
+                <marker date="1437737164417" expanded="true" signature="23886:23988" placeholder="insert into ..." />
+                <marker date="1437737164417" expanded="true" signature="25795:25850" placeholder="select count..User..." />
+                <marker date="1437737164417" expanded="true" signature="26131:26186" placeholder="select Passw..User..." />
+                <marker date="1437737164417" expanded="true" signature="27740:27781" placeholder="select count..User..." />
+                <marker date="1437737164417" expanded="true" signature="28025:28068" placeholder="update User ..." />
+                <marker date="1437737164417" expanded="true" signature="29290:29336" placeholder="update User ..." />
+                <marker date="1437737164417" expanded="true" signature="30331:30423" placeholder="insert into ..." />
+                <marker date="1437737164417" expanded="true" signature="31533:31566" placeholder="select Name ..Team..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Team.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/datamodellib.jar!/com/datamodel/datamodels/Team.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="13.222222">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,8 +124,8 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="&lt;82191fdc-6f22-4993-8bb4-8fc28a88ecb1&gt;/.tomcat-7/server.xml" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/Servlet.java" />
         <option value="$PROJECT_DIR$/src/DataBaseHelper.java" />
+        <option value="$PROJECT_DIR$/src/Servlet.java" />
       </list>
     </option>
   </component>
@@ -143,6 +172,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -243,11 +274,171 @@
               <option name="myItemId" value="artifacts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-src.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-src.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-src.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-src.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-src.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="text" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-src.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="text" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="format" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -500,7 +691,7 @@
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="JAR_PATH" value="$PROJECT_DIR$/lib/servlet-api-2.4.jar" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/lib/android-src.jar" />
       <envs />
       <method />
     </configuration>
@@ -710,45 +901,47 @@
       <workItem from="1437392157663" duration="5909000" />
       <workItem from="1437468371190" duration="15349000" />
       <workItem from="1437555242183" duration="10081000" />
+      <workItem from="1437643317057" duration="8872000" />
+      <workItem from="1437728721597" duration="11282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44424000" />
+    <option name="totallyTimeSpent" value="64578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="30" y="19" width="1228" height="740" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32911393" sideWeight="0.5033003" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32753164" sideWeight="0.4249175" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32753164" sideWeight="0.509901" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287879" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.49669966" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32753164" sideWeight="0.490099" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32753164" sideWeight="0.5561056" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.49669966" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20214522" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.4939394" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5060606" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32753164" sideWeight="0.43729374" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39873418" sideWeight="0.49669966" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32753164" sideWeight="0.49669966" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32753164" sideWeight="0.5627063" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.4939394" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5060606" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32911393" sideWeight="0.49669966" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.49669966" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39873418" sideWeight="0.49669966" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32911393" sideWeight="0.49669966" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -761,7 +954,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -776,6 +969,46 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5978#5984#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="433" column="46" selection-start-line="433" selection-start-column="46" selection-end-line="433" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#DataBaseHelper#0" expanded="false" />
+            <element signature="e#4812#4821#0" expanded="true" />
+            <element signature="e#5478#5485#0" expanded="true" />
+            <marker date="1437737164417" expanded="true" signature="5126:5192" placeholder="select ID, P..Checkin..." />
+            <marker date="1437737164417" expanded="true" signature="5126:5205" placeholder="select ID, P..Checkin..." />
+            <marker date="1437737164417" expanded="true" signature="5573:5748" placeholder="select Check..CheckinItem..." />
+            <marker date="1437737164417" expanded="true" signature="7450:7537" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="8755:8806" placeholder="select ID fr..Team..." />
+            <marker date="1437737164417" expanded="true" signature="8958:9034" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="9387:9442" placeholder="select ID fr..Transfer..." />
+            <marker date="1437737164417" expanded="true" signature="10685:10712" placeholder="select Name ..Parameters..." />
+            <marker date="1437737164417" expanded="true" signature="12126:12147" placeholder="select Name ..Team..." />
+            <marker date="1437737164417" expanded="true" signature="13582:13628" placeholder="select Name,..User..." />
+            <marker date="1437737164417" expanded="true" signature="15065:15122" placeholder="select count..Team..." />
+            <marker date="1437737164417" expanded="true" signature="15350:15405" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="16719:16783" placeholder="update Team ..." />
+            <marker date="1437737164417" expanded="true" signature="17778:17831" placeholder="delete from ..." />
+            <marker date="1437737164417" expanded="true" signature="18809:18878" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="19962:20038" placeholder="update Param..." />
+            <marker date="1437737164417" expanded="true" signature="21154:21218" placeholder="delete from ..." />
+            <marker date="1437737164417" expanded="true" signature="23524:23579" placeholder="select count..User..." />
+            <marker date="1437737164417" expanded="true" signature="23886:23988" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="25795:25850" placeholder="select count..User..." />
+            <marker date="1437737164417" expanded="true" signature="26131:26186" placeholder="select Passw..User..." />
+            <marker date="1437737164417" expanded="true" signature="27740:27781" placeholder="select count..User..." />
+            <marker date="1437737164417" expanded="true" signature="28025:28068" placeholder="update User ..." />
+            <marker date="1437737164417" expanded="true" signature="29290:29336" placeholder="update User ..." />
+            <marker date="1437737164417" expanded="true" signature="30331:30423" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="31533:31566" placeholder="select Name ..Team..." />
           </folding>
         </state>
       </provider>
@@ -786,6 +1019,46 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5978#5984#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataBaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="428" column="25" selection-start-line="424" selection-start-column="16" selection-end-line="428" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#DataBaseHelper#0" expanded="false" />
+            <element signature="e#4812#4821#0" expanded="true" />
+            <element signature="e#5478#5485#0" expanded="true" />
+            <marker date="1437737164417" expanded="true" signature="5126:5192" placeholder="select ID, P..Checkin..." />
+            <marker date="1437737164417" expanded="true" signature="5126:5205" placeholder="select ID, P..Checkin..." />
+            <marker date="1437737164417" expanded="true" signature="5573:5748" placeholder="select Check..CheckinItem..." />
+            <marker date="1437737164417" expanded="true" signature="7450:7537" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="8755:8806" placeholder="select ID fr..Team..." />
+            <marker date="1437737164417" expanded="true" signature="8958:9034" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="9387:9442" placeholder="select ID fr..Transfer..." />
+            <marker date="1437737164417" expanded="true" signature="10685:10712" placeholder="select Name ..Parameters..." />
+            <marker date="1437737164417" expanded="true" signature="12126:12147" placeholder="select Name ..Team..." />
+            <marker date="1437737164417" expanded="true" signature="13582:13628" placeholder="select Name,..User..." />
+            <marker date="1437737164417" expanded="true" signature="15065:15122" placeholder="select count..Team..." />
+            <marker date="1437737164417" expanded="true" signature="15350:15405" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="16719:16783" placeholder="update Team ..." />
+            <marker date="1437737164417" expanded="true" signature="17778:17831" placeholder="delete from ..." />
+            <marker date="1437737164417" expanded="true" signature="18809:18878" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="19962:20038" placeholder="update Param..." />
+            <marker date="1437737164417" expanded="true" signature="21154:21218" placeholder="delete from ..." />
+            <marker date="1437737164417" expanded="true" signature="23524:23579" placeholder="select count..User..." />
+            <marker date="1437737164417" expanded="true" signature="23886:23988" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="25795:25850" placeholder="select count..User..." />
+            <marker date="1437737164417" expanded="true" signature="26131:26186" placeholder="select Passw..User..." />
+            <marker date="1437737164417" expanded="true" signature="27740:27781" placeholder="select count..User..." />
+            <marker date="1437737164417" expanded="true" signature="28025:28068" placeholder="update User ..." />
+            <marker date="1437737164417" expanded="true" signature="29290:29336" placeholder="update User ..." />
+            <marker date="1437737164417" expanded="true" signature="30331:30423" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="31533:31566" placeholder="select Name ..Team..." />
           </folding>
         </state>
       </provider>
@@ -796,6 +1069,29 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5978#5984#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Servlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5978#5984#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Servlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5978#5984#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -821,6 +1117,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5978#5984#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -858,7 +1155,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,7 +1162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-38.342167">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -874,7 +1169,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -882,7 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -890,7 +1183,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -898,7 +1190,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -906,7 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,7 +1204,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,7 +1211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.106024094">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,45 +1222,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/datamodellib.jar!/com/datamodel/datamodels/Team.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="13.222222">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/datamodellib.jar!/com/datamodel/datamodels/Game.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8888888">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DataBaseHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="428" column="25" selection-start-line="424" selection-start-column="16" selection-end-line="428" selection-end-column="90" />
+          <caret line="165" column="45" selection-start-line="165" selection-start-column="45" selection-end-line="165" selection-end-column="45" />
           <folding>
-            <marker date="1437568967223" expanded="true" signature="4941:4968" placeholder="select Name ..Parameters..." />
-            <marker date="1437568967223" expanded="true" signature="6198:6285" placeholder="insert into ..." />
-            <marker date="1437568967223" expanded="true" signature="7503:7554" placeholder="select ID fr..Team..." />
-            <marker date="1437568967223" expanded="true" signature="7706:7782" placeholder="insert into ..." />
-            <marker date="1437568967223" expanded="true" signature="8135:8190" placeholder="select ID fr..Transfer..." />
-            <marker date="1437568967223" expanded="true" signature="9433:9460" placeholder="select Name ..Parameters..." />
-            <marker date="1437568967223" expanded="true" signature="10874:10895" placeholder="select Name ..Team..." />
-            <marker date="1437568967223" expanded="true" signature="12330:12376" placeholder="select Name,..User..." />
-            <marker date="1437568967223" expanded="true" signature="13812:13869" placeholder="select count..Team..." />
-            <marker date="1437568967223" expanded="true" signature="14097:14152" placeholder="insert into ..." />
-            <marker date="1437568967223" expanded="true" signature="15596:15660" placeholder="update Team ..." />
-            <marker date="1437568967223" expanded="true" signature="16656:16709" placeholder="delete from ..." />
-            <marker date="1437568967223" expanded="true" signature="17688:17757" placeholder="insert into ..." />
-            <marker date="1437568967223" expanded="true" signature="18841:18916" placeholder="update Param..." />
-            <marker date="1437568967223" expanded="true" signature="20033:20097" placeholder="delete from ..." />
-            <marker date="1437568967223" expanded="true" signature="22404:22459" placeholder="select count..User..." />
-            <marker date="1437568967223" expanded="true" signature="22766:22868" placeholder="insert into ..." />
-            <marker date="1437568967223" expanded="true" signature="24675:24730" placeholder="select count..User..." />
-            <marker date="1437568967223" expanded="true" signature="25011:25066" placeholder="select Passw..User..." />
-            <marker date="1437568967223" expanded="true" signature="26620:26661" placeholder="select count..User..." />
-            <marker date="1437568967223" expanded="true" signature="26905:26948" placeholder="update User ..." />
-            <marker date="1437568967223" expanded="true" signature="28170:28216" placeholder="update User ..." />
-            <marker date="1437568967223" expanded="true" signature="29211:29303" placeholder="insert into ..." />
-            <marker date="1437568967223" expanded="true" signature="30413:30446" placeholder="select Name ..Team..." />
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#DataBaseHelper#0" expanded="false" />
+            <element signature="e#4812#4821#0" expanded="true" />
+            <element signature="e#5478#5485#0" expanded="true" />
+            <marker date="1437737164417" expanded="true" signature="5126:5192" placeholder="select ID, P..Checkin..." />
+            <marker date="1437737164417" expanded="true" signature="5126:5205" placeholder="select ID, P..Checkin..." />
+            <marker date="1437737164417" expanded="true" signature="5573:5748" placeholder="select Check..CheckinItem..." />
+            <marker date="1437737164417" expanded="true" signature="7450:7537" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="8755:8806" placeholder="select ID fr..Team..." />
+            <marker date="1437737164417" expanded="true" signature="8958:9034" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="9387:9442" placeholder="select ID fr..Transfer..." />
+            <marker date="1437737164417" expanded="true" signature="10685:10712" placeholder="select Name ..Parameters..." />
+            <marker date="1437737164417" expanded="true" signature="12126:12147" placeholder="select Name ..Team..." />
+            <marker date="1437737164417" expanded="true" signature="13582:13628" placeholder="select Name,..User..." />
+            <marker date="1437737164417" expanded="true" signature="15065:15122" placeholder="select count..Team..." />
+            <marker date="1437737164417" expanded="true" signature="15350:15405" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="16719:16783" placeholder="update Team ..." />
+            <marker date="1437737164417" expanded="true" signature="17778:17831" placeholder="delete from ..." />
+            <marker date="1437737164417" expanded="true" signature="18809:18878" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="19962:20038" placeholder="update Param..." />
+            <marker date="1437737164417" expanded="true" signature="21154:21218" placeholder="delete from ..." />
+            <marker date="1437737164417" expanded="true" signature="23524:23579" placeholder="select count..User..." />
+            <marker date="1437737164417" expanded="true" signature="23886:23988" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="25795:25850" placeholder="select count..User..." />
+            <marker date="1437737164417" expanded="true" signature="26131:26186" placeholder="select Passw..User..." />
+            <marker date="1437737164417" expanded="true" signature="27740:27781" placeholder="select count..User..." />
+            <marker date="1437737164417" expanded="true" signature="28025:28068" placeholder="update User ..." />
+            <marker date="1437737164417" expanded="true" signature="29290:29336" placeholder="update User ..." />
+            <marker date="1437737164417" expanded="true" signature="30331:30423" placeholder="insert into ..." />
+            <marker date="1437737164417" expanded="true" signature="31533:31566" placeholder="select Name ..Team..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Servlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72979796">
-          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+        <state vertical-scroll-proportion="-0.37027708">
+          <caret line="134" column="32" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5978#5984#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1054,7 +1367,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>mysql-connector-java-5.1.35</last-edited>
+          <last-edited>android-src</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -6,6 +6,14 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import com.datamodel.datamodels.*;
+import java.lang.Object;
+import com.google.android.gms.maps.model.LatLng;
 
 public class DataBaseHelper {
 
@@ -31,7 +39,7 @@ public class DataBaseHelper {
         double Price = 2.5;
         connect.CreateGarbageParametr(PrijectID, GarbageParametr, Price); */
 
-        /*String GarbageParametr1 = "Пластик";
+        /*String GarbageParametr1 = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
         double Price1 = 3.5;
         connect.UpdateGarbageParametr(GarbageParametr1, Price1); */
 
@@ -42,13 +50,13 @@ public class DataBaseHelper {
         int answ;
         answ = connect.SignUpUser(email, password, name, surname);
         if (answ == 0) {
-            System.out.println("Регистрация прошла успешно! Приятной игры :)");
+            System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ! пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ :)");
         }
         if (answ == 1) {
-            System.out.println("Этот email уже зарегестрирован!");
+            System.out.println("пїЅпїЅпїЅпїЅ email пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!");
         }
         if (answ == 2) {
-            System.out.println("Упс, непредвиленная ошибка!");
+            System.out.println("пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!");
         }
 
 
@@ -61,16 +69,16 @@ public class DataBaseHelper {
         Answer = connect.SignInUser(email, password);
         //connect.SignInUser(email, password);
         if (Answer == 0) {
-            System.out.println("Все ок");
+            System.out.println("пїЅпїЅпїЅ пїЅпїЅ");
         }
         if (Answer == 1) {
-            System.out.println("Такого пользователя не существует!");
+            System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ!");
         }
         if (Answer == 2) {
-            System.out.println("Неверный пароль");
+            System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
         }
         if (Answer == 3) {
-            System.out.println("Упс, непредвиденная ошибка");
+            System.out.println("пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
         } */
         //connect.TestSelect(5);
 
@@ -87,18 +95,18 @@ public class DataBaseHelper {
 
         /* connect.LeaveTeam(4); */
 
-        /* connect.CreateLocation(1, 0.4555, 9.368, 1, "оыипамл"); */
+        /* connect.CreateLocation(1, 0.4555, 9.368, 1, "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ"); */
 
         /*connect.TestSelect(1); */
 
 
         /* InsertIntoTeam iit = new InsertIntoTeam();
-        String TeamName = "Веселые бурундучки";
+        String TeamName = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
         iit.InsertIntoTeam(TeamName); */
 
         /*UpdateTeamName utn = new UpdateTeamName();
         String NewTeamName = "123";
-        String OldTeamName = "Веселые бурундучки вперед!";
+        String OldTeamName = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!";
         utn.UpdateTeamName(OldTeamName, NewTeamName); */
 
         /* DeleteTeam dt = new DeleteTeam();
@@ -107,7 +115,7 @@ public class DataBaseHelper {
 
         /* CreateGarbageParametr cgp = new CreateGarbageParametr();
         int ProjectID = 1;
-        String GarbageParametr = "Батарейка";
+        String GarbageParametr = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
         double Price = 5;
         cgp.CreateGarbageParametr(ProjectID, GarbageParametr, Price); */
 
@@ -140,26 +148,36 @@ public class DataBaseHelper {
     Statement stmt = null;
 
 
-    /*private List<String> GetCheckinList() {
-        List<String> checkinList = new ArrayList<>();
+    public List<CheckIn> GetCheckinList(int projectID) {
+        List<CheckIn> listCheckin = new ArrayList<CheckIn>();
         try {
             Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Connecting to database...");
             conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
 
-            Statement st1 = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+            Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
-            String SQLquery = "select Name from Parameters";
-            PreparedStatement ps1 = conn.prepareStatement(SQLquery);
-            ResultSet rs1 = st1.executeQuery(SQLquery);
-            ps1.execute();
-            while (rs1.next()) {
-                String teamName = rs1.getString("Name");
-                checkinList.add(teamName);
+            String queryCheckin = "select ID, PlaceX, PlaceY, Comment from Checkin where ProjectID = " + projectID;
+            PreparedStatement preparedStatementCheckin = conn.prepareStatement(queryCheckin);
+            ResultSet resultSetChickin = st.executeQuery(queryCheckin);
+            preparedStatementCheckin.execute();
+
+            ArrayList<Param> garbageList = new ArrayList<Param>();
+
+            while (resultSetChickin.next()) {
+                String queryParam = "select CheckinItem.Value, Parameters.Name from CheckinItem, Parameters" +
+                        " where CheckinItem.ParametersID = Parameters.ID and CheckinItem.checkinID = " + resultSetChickin.getInt("ID");
+                PreparedStatement preparedStatementParam = conn.prepareStatement(queryParam);
+                ResultSet resultSetParam = st.executeQuery(queryParam);
+                preparedStatementParam.execute();
+                while (resultSetParam.next()) {
+                    Param param = new Param(resultSetParam.getString("Parameters.Name"), resultSetParam.getInt("CheckinItem.Value"));
+                    garbageList.add(param);
+                }
+                CheckIn checkin = new CheckIn(resultSetChickin.getString("Comment"), garbageList,
+                        new LatLng(resultSetChickin.getDouble("PlaceX"), resultSetChickin.getDouble("PlaceY")));
+                listCheckin.add(checkin);
             }
-            rs1.close();
+            resultSetChickin.close();
 
         } catch (SQLException se) {
             se.printStackTrace();
@@ -178,8 +196,9 @@ public class DataBaseHelper {
                 se.printStackTrace();
             }
         }
-        return checkinList;
-    }*/
+        return listCheckin;
+    }
+
 
     private void CreateTransferItem(int transferID, int parameterID, double value) {
 
@@ -272,7 +291,7 @@ public class DataBaseHelper {
         return id;
     }
 
-    //Получить список параметров мусора
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
    /* private List<String> GetParametersList() {
         List<String> parametersList = new ArrayList<>();
         try {
@@ -314,7 +333,7 @@ public class DataBaseHelper {
         return parametersList;
     }*/
 
-    //Получить список всех команд
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     /*private List<String> GetTeamList() {
         List<String> teamList = new ArrayList<>();
         try {
@@ -356,7 +375,7 @@ public class DataBaseHelper {
         return teamList;
     }*/
 
-    //Получить список участников команды
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /*private List<String> GetTeamParticipants(int teamID) {
         List<String> teamParticipants = new ArrayList<>();
         try {
@@ -401,8 +420,8 @@ public class DataBaseHelper {
         return teamParticipants;
     }*/
 
-    //Создать команду
-    public void CreateTeam(String teamName) {
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public void CreateTeam(String teamName ) {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -422,17 +441,13 @@ public class DataBaseHelper {
 
             if (count == 0) {
                 String query = "insert into Team (Name, CreatedTime)" + " values (?, ?)";
-                Calendar calendar = Calendar.getInstance();
-                //startDate = calendar.getTime().getTime();
-                //long curTime = System.currentTimeMillis();
-                //Date curDate = new Date(curTime);
-                java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
-
+                long timeNow = Calendar.getInstance().getTimeInMillis();
+                java.sql.Timestamp startDate = new java.sql.Timestamp(timeNow);
                 PreparedStatement pS = conn.prepareStatement(query);
                 pS.setString(1, teamName);
-                pS.setDate(2, startDate);
-
+                pS.setTimestamp(2, startDate);
                 pS.execute();
+
             } else {
 
             }
@@ -446,6 +461,7 @@ public class DataBaseHelper {
                 if (stmt != null)
                     conn.close();
             } catch (SQLException se) {
+                se.printStackTrace();
             }
             try {
                 if (conn != null)
@@ -456,8 +472,8 @@ public class DataBaseHelper {
         }
     }
 
-    //Изменить название команды
-    private void UpdateTeamName(String oldTeamName, String newTeamName) {
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public void UpdateTeamName(String oldTeamName, String newTeamName) {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -493,8 +509,8 @@ public class DataBaseHelper {
         }
     }
 
-    //Удалить команду
-    private void DeleteTeam(String teamName) {
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public void DeleteTeam(String teamName) {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -530,7 +546,7 @@ public class DataBaseHelper {
     }
 
 
-    private void CreateGarbageParameter(int projectID, String parameterName, double price) {
+    public void CreateGarbageParameter(int projectID, String parameterName, double price) {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -568,7 +584,7 @@ public class DataBaseHelper {
         }
     }
 
-    private void UpdateGarbageParameter(String garbageParametr, double newPrice) {
+    public void UpdateGarbageParameter(String garbageParameter, double newPrice) {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -577,7 +593,7 @@ public class DataBaseHelper {
             conn = DriverManager.getConnection(myUrl, User, Pass);
             System.out.println("Connected to database succesfully...");
 
-            String query = "update Parameters" + " set Price = ? where Name = '" + garbageParametr + "'";
+            String query = "update Parameters" + " set Price = ? where Name = '" + garbageParameter + "'";
 
             PreparedStatement pS = conn.prepareStatement(query);
             pS.setDouble(1, newPrice);
@@ -603,7 +619,7 @@ public class DataBaseHelper {
         }
     }
 
-    private void DeleteParameter(String parameterName) {
+    public void DeleteParameter(String parameterName) {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -641,8 +657,8 @@ public class DataBaseHelper {
         }
     }
 
-    //Регистрация пользователя
-    private int SignUpUser(String email, String password, String userName, String userSurname) {
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    public int SignUpUser(String email, String password, String userName, String userSurname) {
         int answ = 2;
 
         try {
@@ -728,7 +744,7 @@ public class DataBaseHelper {
         return answ;
     }
 
-    //Авторизация пользователя
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private int SignInUser(String email, String password) {
 
         int answ = 3;
@@ -785,7 +801,7 @@ public class DataBaseHelper {
         return answ;
     }
 
-    //Добавить пользователя к команде
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void JoinUserToTeam(int id, int teamID, int maxCount) {
 
         try {
@@ -811,8 +827,8 @@ public class DataBaseHelper {
 
                 pS.execute();
             } else {
-                System.out.println("Вы не можете присоединиться к команде, так как количество игроков не должно превышать "
-                        + maxCount + " человек");
+                System.out.println("пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "
+                        + maxCount + " пїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
             }
 
 
@@ -835,7 +851,7 @@ public class DataBaseHelper {
         }
     }
 
-    //Исключить пользователя из команды
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void LeaveTeam(int id) {
 
         try {
