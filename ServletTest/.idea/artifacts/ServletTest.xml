@@ -13,6 +13,7 @@
           <element id="library" level="project" name="datamodellib" />
           <element id="library" level="project" name="google-play-services" />
           <element id="library" level="project" name="javax" />
+          <element id="library" level="project" name="android-4.0.1.2" />
         </element>
       </element>
     </root>
