@@ -164,15 +164,13 @@ public class DataBaseHelper {
             ArrayList<Param> garbageList = new ArrayList<Param>();
 
             while (resultSetChickin.next()) {
-                String queryParam = "select CheckinItem.Value, Parameters.Name from CheckinItem, Parameters" +
-                        " where CheckinItem.ParametersID = Parameters.ID and CheckinItem.checkinID = " + resultSetChickin.getInt("ID");
-                PreparedStatement preparedStatementParam = conn.prepareStatement(queryParam);
+/*                PreparedStatement preparedStatementParam = conn.prepareStatement(queryParam);
                 ResultSet resultSetParam = st.executeQuery(queryParam);
                 preparedStatementParam.execute();
                 while (resultSetParam.next()) {
                     Param param = new Param(resultSetParam.getString("Parameters.Name"), resultSetParam.getInt("CheckinItem.Value"));
                     garbageList.add(param);
-                }
+                }*/
                 CheckIn checkin = new CheckIn(resultSetChickin.getString("Comment"), garbageList,
                         new LatLng(resultSetChickin.getDouble("PlaceX"), resultSetChickin.getDouble("PlaceY")));
                 listCheckin.add(checkin);
@@ -181,6 +179,8 @@ public class DataBaseHelper {
 
         } catch (SQLException se) {
             se.printStackTrace();
+
+            listCheckin.add(new CheckIn(se.toString(), new LatLng(0.0,0.0)));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
