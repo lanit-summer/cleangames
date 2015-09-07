@@ -1,18 +1,10 @@
 import java.sql.*;
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
+
 import com.datamodel.datamodels.*;
-import java.lang.Object;
 import com.google.android.gms.maps.model.LatLng;
 
 public class DataBaseHelper {
@@ -149,40 +141,35 @@ public class DataBaseHelper {
 
 
     public List<CheckIn> GetCheckinList(int projectID) {
-        List<CheckIn> listCheckin = new ArrayList<CheckIn>();
+        List<CheckIn> listCheckIn;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
+            openConn();
 
-            Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_UPDATABLE);
-            String queryCheckin = "select ID, PlaceX, PlaceY, Comment from Checkin where ProjectID = " + projectID;
-            PreparedStatement preparedStatementCheckin = conn.prepareStatement(queryCheckin);
-            ResultSet resultSetChickin = st.executeQuery(queryCheckin);
-            preparedStatementCheckin.execute();
+            listCheckIn = loadCheckinWithoutItems(projectID);
 
-            ArrayList<Param> garbageList = new ArrayList<Param>();
+            for (CheckIn checkin:listCheckIn) {
+                ResultSet resultSetGarbage = getResultSet(
+                        "select ci.ID, ci.Value, par.Name " +
+                                "from CheckinItem ci " +
+                                "left join Parameters par ON par.ID = ci.ParametersID " +
+                                "where ci.CheckinID = 1 ");
+                                // TODO FIX ME: checkin should have constructor that accept ID
+                                // +checkin.getID());
+                while (resultSetGarbage.next())
+                {
+                    Param param = new Param(resultSetGarbage.getString("Name"), resultSetGarbage.getInt("Value"));
+                    checkin.getGarb_param().add(param);
+                }
 
-            while (resultSetChickin.next()) {
-/*                PreparedStatement preparedStatementParam = conn.prepareStatement(queryParam);
-                ResultSet resultSetParam = st.executeQuery(queryParam);
-                preparedStatementParam.execute();
-                while (resultSetParam.next()) {
-                    Param param = new Param(resultSetParam.getString("Parameters.Name"), resultSetParam.getInt("CheckinItem.Value"));
-                    garbageList.add(param);
-                }*/
-                CheckIn checkin = new CheckIn(resultSetChickin.getString("Comment"), garbageList,
-                        new LatLng(resultSetChickin.getDouble("PlaceX"), resultSetChickin.getDouble("PlaceY")));
-                listCheckin.add(checkin);
+                resultSetGarbage.close();
             }
-            resultSetChickin.close();
 
-        } catch (SQLException se) {
-            se.printStackTrace();
-
-            listCheckin.add(new CheckIn(se.toString(), new LatLng(0.0,0.0)));
+            return listCheckIn;
         } catch (Exception e) {
             e.printStackTrace();
+            List<CheckIn> dummyError = new ArrayList<CheckIn>();
+            dummyError.add(new CheckIn(e.toString(), new LatLng(0.0, 0.0)));
+            return dummyError;
         } finally {
             try {
                 if (stmt != null)
@@ -196,7 +183,34 @@ public class DataBaseHelper {
                 se.printStackTrace();
             }
         }
+    }
+
+    private void openConn() throws ClassNotFoundException, SQLException {
+        Class.forName(myDriver);
+        conn = DriverManager.getConnection(myUrl, User, Pass);
+    }
+
+    private List<CheckIn> loadCheckinWithoutItems(int projectID) throws SQLException {
+        List<CheckIn> listCheckin = new ArrayList<CheckIn>();
+        ResultSet resultSetChickin = getResultSet("select ID, PlaceX, PlaceY, Comment from Checkin where ProjectID = " + projectID);
+
+        while (resultSetChickin.next()) {
+            CheckIn checkin = new CheckIn(resultSetChickin.getString("Comment"), new ArrayList<Param>(),
+                    new LatLng(resultSetChickin.getDouble("PlaceX"), resultSetChickin.getDouble("PlaceY")));
+            //TODO: set id on load from database
+            listCheckin.add(checkin);
+        }
+
+        resultSetChickin.close();
         return listCheckin;
+    }
+
+    private ResultSet getResultSet(String query) throws SQLException {
+        Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        PreparedStatement preparedStatement = conn.prepareStatement(query);
+        ResultSet resultSet = st.executeQuery(query);
+        preparedStatement.execute();
+        return resultSet;
     }
 
 

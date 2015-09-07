@@ -10,19 +10,20 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Dictionary;
 import java.util.List;
 
 
 public class Servlet extends HttpServlet {
 
-    DataBaseHelper dbs = new DataBaseHelper();
+    private static DataBaseHelper dbs = new DataBaseHelper();
+    private static Gson gson = new Gson();
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 
         request.setCharacterEncoding("UTF-8");
         response.setHeader("Content-Type", "text/plain; charset=UTF-8");
-       // request.setAttribute("messages", messages);
         String actionType = request.getParameter("ActionType");
 
         if (actionType.equals("CreateTeam")) {
@@ -113,23 +114,8 @@ public class Servlet extends HttpServlet {
             writer.close();
         }
         if (actionType.equals("GetCheckinList")) {
-            List<CheckIn> AnswerList = new ArrayList<CheckIn>();
-            AnswerList = dbs.GetCheckinList(Integer.parseInt(request.getParameter("projectID")));
-            //Team teamTest = new Team(1,"123");
-            //AnswerList.add(teamTest);
-            response.setHeader("Content-Type", "text/plain; charset=UTF-8");
-            Gson gson = new Gson();
-            //gson.toJson(AnswerList);
-            OutputStream out = response.getOutputStream();
-            JsonWriter writer = new JsonWriter(new OutputStreamWriter(out,"UTF-8"));
-            writer.setIndent("  ");
-            writer.beginArray();
-            for (CheckIn checkin: AnswerList) {
-                gson.toJson(checkin, CheckIn.class, writer);
-            }
-            writer.endArray();
-            writer.close();
-
+            List<CheckIn> AnswerList = dbs.GetCheckinList(getProjectID(request));
+            returnJsonArray(response, AnswerList, CheckIn.class);
         }
         if (actionType.equals("GSON")){
             String str = request.getParameter("TeamName");
@@ -148,5 +134,32 @@ public class Servlet extends HttpServlet {
             //gson.toJson(str);
             out.println(str);
         }*/
+    }
+
+    private int getProjectID(HttpServletRequest request) {
+        return Integer.parseInt(request.getParameter("projectID"));
+    }
+
+    private <T> void returnJsonArray(HttpServletResponse response, List<T> list, Class typeOfSrc) throws IOException {
+        JsonWriter writer = openWriter(response);
+        writer.beginArray();
+        for (T obj: list) {
+            gson.toJson(obj, typeOfSrc, writer);
+        }
+        writer.endArray();
+        writer.close();
+    }
+
+    private <T> void returnJsonObject(HttpServletResponse response, T object, Class typeOfSrc) throws IOException {
+        JsonWriter writer = openWriter(response);
+        gson.toJson(object, typeOfSrc, writer);
+        writer.close();
+    }
+
+    private JsonWriter openWriter(HttpServletResponse response) throws IOException {
+        OutputStream out = response.getOutputStream();
+        JsonWriter writer = new JsonWriter(new OutputStreamWriter(out,"UTF-8"));
+        writer.setIndent("  ");
+        return writer;
     }
 }
