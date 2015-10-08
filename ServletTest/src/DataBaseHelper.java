@@ -214,7 +214,7 @@ public class DataBaseHelper {
     }
 
 
-    private void CreateTransferItem(int transferID, int parameterID, double value) {
+    public void CreateTransferItem(int transferID, int parameterID, double value) {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -252,7 +252,7 @@ public class DataBaseHelper {
     }
 
 
-    private int CreateTransfer(String teamName, int locationID) {
+    public int CreateTransfer(String teamName, int locationID) {
         int id = 0;
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -390,28 +390,17 @@ public class DataBaseHelper {
     }*/
 
     //�������� ������ ���������� �������
-    /*private List<String> GetTeamParticipants(int teamID) {
-        List<String> teamParticipants = new ArrayList<>();
+    public List<User> GetTeamParticipants(int teamID) {
+        List<User> teamParticipants = new ArrayList<User>();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            openConn();
 
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
 
-            Statement st1 = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_UPDATABLE);
-            String SQLquery = "select Name, Surname from User where TeamID = " + teamID;
-            PreparedStatement ps1 = conn.prepareStatement(SQLquery);
-            ResultSet rs1 = st1.executeQuery(SQLquery);
-            ps1.execute();
+            ResultSet rs1 = getResultSet("select ID, Name, Surname, IsAdmin from User where TeamID =" + teamID);
             while (rs1.next()) {
-                String name = rs1.getString("Name");
-                String surname = rs1.getString("Surname");
-                teamParticipants.add(name + " " + surname);
+                User user = new User(rs1.getInt("ID"),rs1.getString("Name"),rs1.getString("Surname"), rs1.getBoolean("IsAdmin"));
+                teamParticipants.add(user);
             }
-
-
             rs1.close();
 
         } catch (SQLException se) {
@@ -432,7 +421,7 @@ public class DataBaseHelper {
             }
         }
         return teamParticipants;
-    }*/
+    }
 
     //������� �������
     public void CreateTeam(String teamName ) {
@@ -816,7 +805,7 @@ public class DataBaseHelper {
     }
 
     //�������� ������������ � �������
-    private void JoinUserToTeam(int id, int teamID, int maxCount) {
+    public void JoinTeam(int id, int teamID, int maxCount) {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -866,7 +855,7 @@ public class DataBaseHelper {
     }
 
     //��������� ������������ �� �������
-    private void LeaveTeam(int id) {
+    public void LeaveTeam(int id) {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -901,7 +890,7 @@ public class DataBaseHelper {
         }
     }
 
-    private void CreateLocation(int type, double placeX, double placeY, int projectID, String comment) {
+    public void CreateLocation(int type, double placeX, double placeY, int projectID, String comment) {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");

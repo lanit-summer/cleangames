@@ -1,4 +1,5 @@
 import com.datamodel.datamodels.CheckIn;
+import com.datamodel.datamodels.User;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonWriter;
 
@@ -114,8 +115,97 @@ public class Servlet extends HttpServlet {
             writer.close();
         }
         if (actionType.equals("GetCheckinList")) {
-            List<CheckIn> AnswerList = dbs.GetCheckinList(getProjectID(request));
+            String sProjectID = request.getParameter("ProjectID");
+            int projectID = new Integer(sProjectID);
+            List<CheckIn> AnswerList = dbs.GetCheckinList(projectID);
             returnJsonArray(response, AnswerList, CheckIn.class);
+        }
+        if (actionType.equals("CreateTransferItem"))
+        {
+            String sTranferID = request.getParameter("TransferID");
+            int transferID = new Integer(sTranferID);
+            String sParameterID = request.getParameter("ParameterID");
+            int parameterID = new Integer(sParameterID);
+            String sValue = request.getParameter("Value");
+            double value = new Double(sValue);
+            dbs.CreateTransferItem(transferID,parameterID,value);
+            String str = "Transfer iteam created: " + transferID + ' ' + parameterID + ' ' + value;
+            Gson gson = new Gson();
+            gson.toJson(str);
+            OutputStream out = response.getOutputStream();
+            JsonWriter writer = new JsonWriter(new OutputStreamWriter(out,"UTF-8"));
+            gson.toJson(str,String.class,writer);
+            writer.close();
+        }
+        if (actionType.equals("CreateTransfer"))
+        {
+            String teamName = request.getParameter("TeamName");
+            String sLocationID = request.getParameter("LocationID");
+            int locationID = new Integer(sLocationID);
+            dbs.CreateTransfer(teamName,locationID);
+            String str = "Transfer iteam created: " + teamName + ' ' + locationID;
+            Gson gson = new Gson();
+            gson.toJson(str);
+            OutputStream out = response.getOutputStream();
+            JsonWriter writer = new JsonWriter(new OutputStreamWriter(out,"UTF-8"));
+            gson.toJson(str,String.class,writer);
+            writer.close();
+        }
+        if (actionType.equals("JoinTeam"))
+        {
+            String sID= request.getParameter("ID");
+            int id = new Integer(sID);
+            String sTeamID = request.getParameter("TeamID");
+            int teamID = new Integer(sTeamID);
+            int maxCount = 5;
+            dbs.JoinTeam(id,teamID,maxCount);
+            /*String str = "Transfer iteam created: " + transferID + ' ' + parameterID + ' ' + value;
+            Gson gson = new Gson();
+            gson.toJson(str);
+            OutputStream out = response.getOutputStream();
+            JsonWriter writer = new JsonWriter(new OutputStreamWriter(out,"UTF-8"));
+            gson.toJson(str,String.class,writer);
+            writer.close();*/
+        }
+        if (actionType.equals("LeaveTeam"))
+        {
+            String sID = request.getParameter("ID");
+            int id = new Integer(sID);
+            dbs.LeaveTeam(id);
+            String str = "User left the team: " + id;
+            Gson gson = new Gson();
+            gson.toJson(str);
+            OutputStream out = response.getOutputStream();
+            JsonWriter writer = new JsonWriter(new OutputStreamWriter(out,"UTF-8"));
+            gson.toJson(str,String.class,writer);
+            writer.close();
+        }
+        if (actionType.equals("CreateLocation"))
+        {
+            String sType = request.getParameter("Type");
+            int type = new Integer(sType);
+            String sPlaceX = request.getParameter("PlaceX");
+            double placeX = new Double(sPlaceX);
+            String sPlaceY = request.getParameter("PlaceY");
+            double placeY = new Double(sPlaceY);
+            String sProjectID = request.getParameter("ProjectID");
+            int projectID = new Integer(sProjectID);
+            String comment = request.getParameter("Comment");
+            dbs.CreateLocation(type,placeX,placeY,projectID,comment);
+            String str = "Location created: " + type + ' ' + placeX + ' ' + placeY +  ' ' + projectID + ' ' + comment;
+            Gson gson = new Gson();
+            gson.toJson(str);
+            OutputStream out = response.getOutputStream();
+            JsonWriter writer = new JsonWriter(new OutputStreamWriter(out,"UTF-8"));
+            gson.toJson(str,String.class,writer);
+            writer.close();
+        }
+        if (actionType.equals("GetTeamParticipants"))
+        {
+            String sTeamID = request.getParameter("TeamID");
+            int teamID = new Integer(sTeamID);
+            List<User> teamParticipants = dbs.GetTeamParticipants(teamID);
+            returnJsonArray(response, teamParticipants, User.class);
         }
         if (actionType.equals("GSON")){
             String str = request.getParameter("TeamName");
