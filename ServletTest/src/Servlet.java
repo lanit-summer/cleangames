@@ -153,19 +153,13 @@ public class Servlet extends HttpServlet {
         }
         if (actionType.equals("JoinTeam"))
         {
-            String sID= request.getParameter("ID");
-            int id = new Integer(sID);
+            String sUserID= request.getParameter("UserID");
+            int userID = new Integer(sUserID);
             String sTeamID = request.getParameter("TeamID");
             int teamID = new Integer(sTeamID);
             int maxCount = 5;
-            dbs.JoinTeam(id,teamID,maxCount);
-            /*String str = "Transfer iteam created: " + transferID + ' ' + parameterID + ' ' + value;
-            Gson gson = new Gson();
-            gson.toJson(str);
-            OutputStream out = response.getOutputStream();
-            JsonWriter writer = new JsonWriter(new OutputStreamWriter(out,"UTF-8"));
-            gson.toJson(str,String.class,writer);
-            writer.close();*/
+            dbs.JoinTeam(userID,teamID,maxCount);
+
         }
         if (actionType.equals("LeaveTeam"))
         {
@@ -206,6 +200,15 @@ public class Servlet extends HttpServlet {
             int teamID = new Integer(sTeamID);
             List<User> teamParticipants = dbs.GetTeamParticipants(teamID);
             returnJsonArray(response, teamParticipants, User.class);
+        }
+        if (actionType.equals("GetUserCheckinList"))
+        {
+            String sPrjectID = request.getParameter("ProjectID");
+            int projectID = new Integer(sPrjectID);
+            String sUserID = request.getParameter("UserID");
+            int userID = new Integer(sUserID);
+            List<CheckIn> userCheckinList = dbs.GetUserCheckinList(projectID,userID);
+            returnJsonArray(response, userCheckinList, CheckIn.class);
         }
         if (actionType.equals("GSON")){
             String str = request.getParameter("TeamName");
