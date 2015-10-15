@@ -2,14 +2,14 @@ import com.datamodel.datamodels.CheckIn;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import com.sun.deploy.net.HttpResponse;
-import javafx.scene.control.TextInputControl;
+//import javafx.scene.control.TextInputControl;
 import sun.net.www.http.HttpClient;
 
 import javax.swing.text.AbstractDocument;
 import java.io.*;
 import java.net.*;
 import java.text.*;
-import java.nio.charset.StandardCharsets;
+//import java.nio.charset.StandardCharsets;
 import java.util.*;
 import com.google.android.gms.maps.model.LatLng;
 
@@ -26,8 +26,8 @@ public class ClientApp {
 
     public void CreateTeam(String teamName, int userID){
 
-        String targetURL = "http://api.cleangames.ru/ServletTest/Servlet";
-        String urlParameters = "ActionType=GetCheckinList&projectID=1";
+        String targetURL = "http://localhost:8080/Servlet";
+        String urlParameters = "ActionType=CreateTeam&TeamName=Победа";
 
 
         //System.out.println(urlParameters);
@@ -51,10 +51,11 @@ public class ClientApp {
 
             //Send request
             OutputStream wr = connection.getOutputStream();
-            wr.write(urlParameters.getBytes("UTF-8"));
+            wr.write(urlParameters.getBytes());
             wr.flush();
             wr.close();
 
+            /*
             //Get Response
             Gson gson = new Gson();
             InputStream is = connection.getInputStream();
@@ -68,6 +69,7 @@ public class ClientApp {
             rd.endArray();
             rd.close();
             System.out.println(responseList.get(1).getComment());
+            */
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

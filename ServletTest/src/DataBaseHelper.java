@@ -213,15 +213,10 @@ public class DataBaseHelper {
         return resultSet;
     }
 
-
     public void CreateTransferItem(int transferID, int parameterID, double value) {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
+            openConn();
 
             String query = "insert into TransferItem (GarbageTransferID, ParametersID, Value)" + " values (?, ?, ?)";
 
@@ -255,11 +250,7 @@ public class DataBaseHelper {
     public int CreateTransfer(String teamName, int locationID) {
         int id = 0;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
+            openConn();
 
             Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
@@ -427,11 +418,7 @@ public class DataBaseHelper {
     public void CreateTeam(String teamName ) {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
+            openConn();
 
             Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
@@ -479,12 +466,7 @@ public class DataBaseHelper {
     public void UpdateTeamName(String oldTeamName, String newTeamName) {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
-
+            openConn();
 
             String query = "update Team" + " set Name = ? where Name = '" + oldTeamName + "'";
 
@@ -516,17 +498,11 @@ public class DataBaseHelper {
     public void DeleteTeam(String teamName) {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
-
+            openConn();
 
             String query = "delete from Team" + " where Name = '" + teamName + "'";
 
             PreparedStatement pS = conn.prepareStatement(query);
-
             pS.execute();
 
         } catch (SQLException se) {
@@ -552,12 +528,7 @@ public class DataBaseHelper {
     public void CreateGarbageParameter(int projectID, String parameterName, double price) {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
-
+            openConn();
 
             String query = "insert into Parameters (ProjectID, Name, Price)" + " values (?, ?, ?)";
 
@@ -590,11 +561,7 @@ public class DataBaseHelper {
     public void UpdateGarbageParameter(String garbageParameter, double newPrice) {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
+            openConn();
 
             String query = "update Parameters" + " set Price = ? where Name = '" + garbageParameter + "'";
 
@@ -625,15 +592,7 @@ public class DataBaseHelper {
     public void DeleteParameter(String parameterName) {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
-            /*Statement stat = null;
-            stat.execute("set character set utf8");
-            stat.execute("set names utf8"); */
-
+            openConn();
 
             String query = "delete from Parameters" + " where Name = '" + parameterName + "'";
 
@@ -660,17 +619,11 @@ public class DataBaseHelper {
         }
     }
 
-    //����������� ������������
     public int SignUpUser(String email, String password, String userName, String userSurname) {
         int answ = 2;
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
-
+            openConn();
             /*Statement st1 = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
             String SQLquery = "select count(*) from User where Email = '" + email + "'";
@@ -747,16 +700,11 @@ public class DataBaseHelper {
         return answ;
     }
 
-    //����������� ������������
     private int SignInUser(String email, String password) {
 
         int answ = 3;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
+            openConn();
 
             Statement st1 = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_UPDATABLE);
@@ -804,34 +752,21 @@ public class DataBaseHelper {
         return answ;
     }
 
-    //�������� ������������ � �������
-    public void JoinTeam(int id, int teamID, int maxCount) {
+    public void JoinTeam(int userID, int teamID, int maxCount) {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
-
-            Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_UPDATABLE);
-            String sqlQuery = "select count(*) from User where TeamID = " + teamID;
-            ResultSet rs = st.executeQuery(sqlQuery);
-            int count = 0;
+            openConn();
+            ResultSet rs = getResultSet("select count(*) from User where TeamID = " + teamID);
             rs.next();
-            count = rs.getInt(1);
+            int count = rs.getInt(1);
             rs.close();
 
             if (count <= maxCount) {
-                String query = "update User set TeamID = ?" + " where ID = " + id;
+                String query = "update User set TeamID = " + teamID + " where ID = " + userID;
                 PreparedStatement pS = conn.prepareStatement(query);
-                pS.setInt(1, teamID);
-
                 pS.execute();
             } else {
-                System.out.println("�� �� ������ �������������� � �������, ��� ��� ���������� ������� �� ������ ��������� "
-                        + maxCount + " �������");
+                System.out.println("Maximum team participants");
             }
 
 
@@ -854,21 +789,14 @@ public class DataBaseHelper {
         }
     }
 
-    //��������� ������������ �� �������
-    public void LeaveTeam(int id) {
+   public void LeaveTeam(int userID) {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            openConn();
 
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
-
-
-            String query = "update User set TeamID = NULL" + " where ID = " + id;
+            String query = "update User set TeamID = NULL" + " where ID = " + userID;
 
             PreparedStatement pS = conn.prepareStatement(query);
-
             pS.execute();
 
         } catch (SQLException se) {
@@ -893,12 +821,7 @@ public class DataBaseHelper {
     public void CreateLocation(int type, double placeX, double placeY, int projectID, String comment) {
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(myUrl, User, Pass);
-            System.out.println("Connected to database succesfully...");
-
+            openConn();
 
             String query = "insert into Locations (Type, PlaceX, PlaceY, ProjectID, Comment)" + " values (?, ?, ?, ?, ?)";
 
@@ -908,7 +831,6 @@ public class DataBaseHelper {
             pS.setDouble(3, placeY);
             pS.setInt(4, projectID);
             pS.setString(5, comment);
-
 
             pS.execute();
 
@@ -974,5 +896,60 @@ public class DataBaseHelper {
         }
     }
 
+    private List<CheckIn> loadUserCheckinListWithoutItems(int projectID, int userID) throws SQLException {
+        List<CheckIn> listCheckin = new ArrayList<CheckIn>();
+        ResultSet resultSetCheckin = getResultSet("select ID, PlaceX, PlaceY, Comment from Checkin where ProjectID = " + projectID + " and UserID = " + userID);
 
+        while (resultSetCheckin.next()) {
+            CheckIn checkin = new CheckIn(resultSetCheckin.getString("Comment"), new ArrayList<Param>(),
+                    new LatLng(resultSetCheckin.getDouble("PlaceX"), resultSetCheckin.getDouble("PlaceY")));
+            listCheckin.add(checkin);
+        }
+
+        resultSetCheckin.close();
+        return listCheckin;
+    }
+
+    public List<CheckIn> GetUserCheckinList(int projectID, int userID)
+    {
+        List<CheckIn> userCheckinList;
+        try{
+            openConn();
+            userCheckinList = loadUserCheckinListWithoutItems(projectID, userID);
+            for (CheckIn checkIn:userCheckinList)
+            {
+                ResultSet resultSet = getResultSet("select ci.ID, ci.Value, par.Name from CheckinItem ci left join Parameters par ON par.ID = ci.ParametersID where ci.CheckinID = 1"); //+checkIn.getID());
+                //);
+                while (resultSet.next())
+                {
+                    Param param = new Param(resultSet.getString("Name"), resultSet.getInt("Value"));
+                    checkIn.getGarb_param().add(param);
+                }
+
+                resultSet.close();
+
+            }
+            return userCheckinList;
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            List<CheckIn> dummyError = new ArrayList<CheckIn>();
+            dummyError.add(new CheckIn(e.toString(), new LatLng(0.0, 0.0)));
+            return dummyError;
+        }
+        finally
+        {
+            try {
+                if (stmt != null)
+                    conn.close();
+            } catch (SQLException se) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+        }
+    }
 }
