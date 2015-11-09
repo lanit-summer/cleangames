@@ -29,7 +29,8 @@ public class Servlet extends HttpServlet {
 
         if (actionType.equals("CreateTeam")) {
             String teamName = request.getParameter("TeamName");
-            String userID = request.getParameter("UserID");
+            //String sUserID = request.getParameter("UserID");
+            //int userID = new Integer(sUserID);
             dbs.CreateTeam(teamName);
             PrintWriter out = response.getWriter();
             out.println("Team added: " + teamName);
