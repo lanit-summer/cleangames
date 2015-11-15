@@ -34,7 +34,6 @@ import java.util.Date;
 import com.example.katerina.mapsex.R;
 
 
-
 public class CheckInInfoActivity extends Activity{
     String a, b;
     Bitmap imageBitmap;
@@ -49,7 +48,7 @@ public class CheckInInfoActivity extends Activity{
         commentText = (EditText) findViewById(R.id.EditText01);
 
 
-        final Button button1 = (Button) findViewById(R.id.button_submit);
+        final Button submitButton = (Button) findViewById(R.id.button_submit);
         final EditText garbage1=(EditText)findViewById(R.id.garbage1);
         final EditText garbage2=(EditText)findViewById(R.id.garbage2);
         final EditText garbage3=(EditText)findViewById(R.id.garbage3);
@@ -57,7 +56,7 @@ public class CheckInInfoActivity extends Activity{
         final EditText garbage5=(EditText)findViewById(R.id.garbage5);
 
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        submitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                     LocationProvider locationProvider=LocationProvider.Initialize();
@@ -66,8 +65,8 @@ public class CheckInInfoActivity extends Activity{
                     garbage.add(new Param("Пластик",Integer.parseInt(garbage1.getText().toString())));
                     garbage.add(new Param("Металл",Integer.parseInt(garbage2.getText().toString())));
                     garbage.add(new Param("Стекло",Integer.parseInt(garbage3.getText().toString())));
-                    garbage.add(new Param("Смешанный мусор",Integer.parseInt(garbage1.getText().toString())));
-                    garbage.add(new Param("Батарейки",Integer.parseInt(garbage1.getText().toString())));
+                    garbage.add(new Param("Смешанный мусор",Integer.parseInt(garbage4.getText().toString())));
+                    garbage.add(new Param("Батарейки",Integer.parseInt(garbage5.getText().toString())));
                     CheckIn checkIn=new CheckIn(commentText.getText().toString(),garbage,location,imageBitmap);
                     locationProvider.setCheckin(checkIn);
                     Intent returnIntent = new Intent();
@@ -75,13 +74,6 @@ public class CheckInInfoActivity extends Activity{
                     returnIntent.putExtra("garbage",b);
                     setResult(RESULT_OK,returnIntent);
                     finish();
-
-
-
-
-
-
-
             }
 
 
@@ -212,14 +204,8 @@ public class CheckInInfoActivity extends Activity{
         });
     }
 
-
-
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-
 
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
@@ -250,7 +236,7 @@ public class CheckInInfoActivity extends Activity{
                 int column_index = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
                 cursor.moveToFirst();
                 String selectedImagePath = cursor.getString(column_index);
-                Bitmap bm;
+
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inJustDecodeBounds = true;
                 BitmapFactory.decodeFile(selectedImagePath, options);
@@ -261,13 +247,8 @@ public class CheckInInfoActivity extends Activity{
                     scale *= 2;
                 options.inSampleSize = scale;
                 options.inJustDecodeBounds = false;
-                bm = BitmapFactory.decodeFile(selectedImagePath, options);
-                imageBitmap = (Bitmap) bm;
+                imageBitmap = BitmapFactory.decodeFile(selectedImagePath, options);
             }
-
-
-
-
         }
     }
 
@@ -315,6 +296,4 @@ public class CheckInInfoActivity extends Activity{
         mCurrentPhotoPath = "file:" + image.getAbsolutePath();
         return image;
     }
-
 }
-
