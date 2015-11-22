@@ -27,9 +27,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 import com.example.katerina.mapsex.R;
 
@@ -38,7 +36,6 @@ public class CheckInInfoActivity extends Activity{
     String a, b;
     Bitmap imageBitmap;
     EditText commentText;
-    String mCurrentPhotoPath;
     private static final int CAMERA_REQUEST = 1888;
     static final int SELECT_FILE = 1;
     @Override
@@ -47,14 +44,12 @@ public class CheckInInfoActivity extends Activity{
         setContentView(R.layout.activity_check_in);
         commentText = (EditText) findViewById(R.id.EditText01);
 
-
         final Button submitButton = (Button) findViewById(R.id.button_submit);
         final EditText garbage1=(EditText)findViewById(R.id.garbage1);
         final EditText garbage2=(EditText)findViewById(R.id.garbage2);
         final EditText garbage3=(EditText)findViewById(R.id.garbage3);
         final EditText garbage4=(EditText)findViewById(R.id.garbage4);
         final EditText garbage5=(EditText)findViewById(R.id.garbage5);
-
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -84,9 +79,9 @@ public class CheckInInfoActivity extends Activity{
             public void onClick(View v) {
                Integer temp= Integer.parseInt(garbage1.getText().toString());
                if (temp>0){
-               temp--;
-                garbage1.getText().clear();
-                garbage1.getText().append(temp.toString());}
+                   temp--;
+                   garbage1.setText(temp.toString());
+               }
             }
 
             });
@@ -96,10 +91,8 @@ public class CheckInInfoActivity extends Activity{
             public void onClick(View v) {
                 Integer temp= Integer.parseInt(garbage1.getText().toString());
                 temp++;
-                garbage1.getText().clear();
-                garbage1.getText().append(temp.toString());
+                garbage1.setText(temp.toString());
             }
-
         });
 
         final Button button3 = (Button) findViewById(R.id.button3);
@@ -108,8 +101,8 @@ public class CheckInInfoActivity extends Activity{
                 Integer temp= Integer.parseInt(garbage2.getText().toString());
                 if (temp>0){
                     temp--;
-                    garbage2.getText().clear();
-                    garbage2.getText().append(temp.toString());}
+                    garbage2.setText(temp.toString());
+                }
             }
 
         });
@@ -119,8 +112,7 @@ public class CheckInInfoActivity extends Activity{
             public void onClick(View v) {
                 Integer temp= Integer.parseInt(garbage2.getText().toString());
                 temp++;
-                garbage2.getText().clear();
-                garbage2.getText().append(temp.toString());
+                garbage2.setText(temp.toString());
             }
 
         });
@@ -131,8 +123,8 @@ public class CheckInInfoActivity extends Activity{
                 Integer temp= Integer.parseInt(garbage3.getText().toString());
                 if (temp>0){
                     temp--;
-                    garbage3.getText().clear();
-                    garbage3.getText().append(temp.toString());}
+                    garbage3.setText(temp.toString());
+                }
             }
 
         });
@@ -142,8 +134,7 @@ public class CheckInInfoActivity extends Activity{
             public void onClick(View v) {
                 Integer temp= Integer.parseInt(garbage3.getText().toString());
                 temp++;
-                garbage3.getText().clear();
-                garbage3.getText().append(temp.toString());
+                garbage3.setText(temp.toString());
             }
 
         });
@@ -154,8 +145,8 @@ public class CheckInInfoActivity extends Activity{
                 Integer temp= Integer.parseInt(garbage4.getText().toString());
                 if (temp>0){
                     temp--;
-                    garbage4.getText().clear();
-                    garbage4.getText().append(temp.toString());}
+                    garbage4.setText(temp.toString());
+                }
             }
 
         });
@@ -165,8 +156,7 @@ public class CheckInInfoActivity extends Activity{
             public void onClick(View v) {
                 Integer temp= Integer.parseInt(garbage4.getText().toString());
                 temp++;
-                garbage4.getText().clear();
-                garbage4.getText().append(temp.toString());
+                garbage4.setText(temp.toString());
             }
 
         });
@@ -188,8 +178,7 @@ public class CheckInInfoActivity extends Activity{
             public void onClick(View v) {
                 Integer temp = Integer.parseInt(garbage5.getText().toString());
                 temp++;
-                garbage5.getText().clear();
-                garbage5.getText().append(temp.toString());
+                garbage5.setText(temp.toString());
             }
 
         });
@@ -226,7 +215,7 @@ public class CheckInInfoActivity extends Activity{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                imageBitmap = (Bitmap) thumbnail;
+                imageBitmap = thumbnail;
 
             } else if (requestCode == SELECT_FILE) {
                 Uri selectedImageUri = data.getData();
@@ -239,7 +228,6 @@ public class CheckInInfoActivity extends Activity{
 
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inJustDecodeBounds = true;
-                BitmapFactory.decodeFile(selectedImagePath, options);
                 final int REQUIRED_SIZE = 200;
                 int scale = 1;
                 while (options.outWidth / scale / 2 >= REQUIRED_SIZE
@@ -276,24 +264,5 @@ public class CheckInInfoActivity extends Activity{
             }
         });
         builder.show();
-    }
-
-
-
-    private File createImageFile() throws IOException {
-        // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_PICTURES);
-        File image = File.createTempFile(
-                imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
-                storageDir      /* directory */
-        );
-
-        // Save a file: path for use with ACTION_VIEW intents
-        mCurrentPhotoPath = "file:" + image.getAbsolutePath();
-        return image;
     }
 }

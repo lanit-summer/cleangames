@@ -37,9 +37,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.model.*;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -103,8 +101,6 @@ public class MapFragment
         markerHeight = getResources().getDrawable(R.drawable.pin).getIntrinsicHeight();
 
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -174,19 +170,10 @@ public class MapFragment
     textView = (TextView) infoWindowContainer.findViewById(R.id.textview_title);
     myImageView = (ImageView)infoWindowContainer.findViewById(R.id.imageView);
 
-
-
     return rootView;
 }
 
-    public Object onRetainNonConfigurationInstance(){
-        return spots;
-    }
-
-
     //Обрабатываем нажатия по пунктам popup меню, ссылаясь на id каждого пункта, заданные в файле popup.xml:
-
-
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -216,13 +203,7 @@ public class MapFragment
     public void onMapClick(LatLng latLng) {
         infoWindowContainer.setVisibility(INVISIBLE);
 
-
-
-
     }
-
-
-
 
     @Override
     public boolean onMarkerClick(Marker marker) {
@@ -243,7 +224,7 @@ public class MapFragment
             buffer.append(spot.getComment()+"\n");
             int AllGarbage=0;
             for (int i=0;i<garbage.size();i++){
-                buffer.append(garbage.get(i).getName()+" "+garbage.get(i).getAmount()+"\n");
+                buffer.append(garbage.get(i).getName()+": "+garbage.get(i).getAmount()+"\n");
                 AllGarbage+=garbage.get(i).getAmount();
             }
             buffer.append("Общее кол-во:"+AllGarbage);
@@ -263,7 +244,6 @@ public class MapFragment
 
             infoWindowContainer.setVisibility(VISIBLE);
 
-
         return true;
     }
 
@@ -282,8 +262,6 @@ public class MapFragment
                 Projection projection = map.getProjection();
                 BitmapDescriptor icon = BitmapDescriptorFactory.fromResource(R.drawable.pin);
                 Marker m =   map.addMarker(markerOptions.icon(icon));
-                Date cDate = new Date();
-                String fDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(cDate);
                 spots.put(m,checkIn);
             }
             if (resultCode == 1) {
