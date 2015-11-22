@@ -36,7 +36,7 @@
                 <ImageView
                     android:layout_width="124dp"
                     android:layout_height="150dp"
-                    android:src="@drawable/hellokitty"
+                    android:src="@drawable/garbage_empty_photo"
                     android:id="@+id/imageView" />
 
                 <TextView

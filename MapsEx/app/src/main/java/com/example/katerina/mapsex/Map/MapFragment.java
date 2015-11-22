@@ -229,8 +229,10 @@ public class MapFragment
             }
             buffer.append("Общее кол-во:"+AllGarbage);
             textView.setText(buffer);
-        if (spot.photo!=null){
-            myImageView.setImageBitmap(spot.getPhoto());} else  myImageView.setImageResource(R.drawable.hellokitty);
+        if (spot.photo != null) {
+            myImageView.setImageBitmap(spot.getPhoto());
+        } else
+            myImageView.setImageResource(R.drawable.garbage_empty_photo);
 
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
