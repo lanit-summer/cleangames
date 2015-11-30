@@ -221,6 +221,14 @@ public class Servlet extends HttpServlet {
             gson.toJson(str,String.class,writer);
             writer.close();
         }
+        if (actionType.equals("RatingCheck"))
+        {
+            String sTeamID = request.getParameter("TeamID");
+            int teamID = new Integer(sTeamID);
+            String sProjectID = request.getParameter("ProjectID");
+            int projectID = new Integer(sProjectID);
+            dbs.ratingUpdate(teamID,projectID);
+        }
         /*else {
             String str = "Error";
             PrintWriter out = response.getWriter();

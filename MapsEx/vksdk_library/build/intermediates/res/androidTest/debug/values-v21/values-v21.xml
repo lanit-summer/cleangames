@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/D:/Projects/cleangames/MapsEx/vksdk_library/build/intermediates/bundles/debug/res/values-v21/values-v21.xml -->
+    <eat-comment/>
+    <style name="VK.Transparent" parent="android:Theme.Material.Light">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+</resources>

@@ -952,4 +952,70 @@ public class DataBaseHelper {
             }
         }
     }
+
+    private Object lock = new Object();
+
+    public void ratingUpdate(int teamID, int projectID) {
+        try {
+            openConn();
+            synchronized (lock)
+            {
+
+                //get # of check-ins and transfer list for the team
+
+                ResultSet resultSet = getResultSet("SELECT " +
+                        "b.CheckinPrice, " +
+                        "count(a.ID) as Count " +
+                        "from Checkin a " +
+                        "join Projects b " +
+                        "on a.ProjectID=b.ID " +
+                        "where TeamID = " + teamID);
+                resultSet.next();
+                double checkinPrice = resultSet.getDouble(1);
+                int nCheckin = resultSet.getInt(2);
+
+                resultSet = getResultSet("SELECT " +
+                        "a.ID, " +
+                        "b.Value, " +
+                        "c.Price " +
+                        "FROM  Transfer a " +
+                        "JOIN TransferItem b " +
+                        "ON b.TransferID=a.ID " +
+                        "JOIN Parameters c " +
+                        "ON b.ParametersID=c.ID " +
+                        "WHERE TeamID = "+ teamID);
+
+                //count the new rating
+
+                double rating = nCheckin*checkinPrice;
+                while (resultSet.next())
+                {
+                    rating += resultSet.getDouble("Value")*resultSet.getDouble("Price");
+                }
+
+                //update rating table @ database
+
+                String query = "replace into TeamProjectRating set Value = " + rating +", TeamID = " + teamID + ", ProjectID = " + projectID;
+                PreparedStatement preparedStatement = conn.prepareStatement(query);
+                preparedStatement.execute();
+            }
+
+        }  catch (SQLException se) {
+            se.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (stmt != null)
+                    conn.close();
+            } catch (SQLException se) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+        }
+    }
 }
