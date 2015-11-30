@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/leontyev/Dropbox/work/apitech/ulogin-android/android-studio/SDK-dev/sdk/src/main/res/values-fr/strings.xml -->
+    <eat-comment/>
+    <string name="ulogin_authorize">Entrez vos informations</string>
+    <string name="ulogin_no_connection">Vérifiez la connexion réseau</string>
+    <string name="ulogin_select_provider">Sélectionnez la méthode d\'entrée</string>
+</resources>

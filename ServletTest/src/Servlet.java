@@ -29,7 +29,8 @@ public class Servlet extends HttpServlet {
 
         if (actionType.equals("CreateTeam")) {
             String teamName = request.getParameter("TeamName");
-            String userID = request.getParameter("UserID");
+            //String sUserID = request.getParameter("UserID");
+            //int userID = new Integer(sUserID);
             dbs.CreateTeam(teamName);
             PrintWriter out = response.getWriter();
             out.println("Team added: " + teamName);
@@ -219,6 +220,14 @@ public class Servlet extends HttpServlet {
             JsonWriter writer = new JsonWriter(new OutputStreamWriter(out,"UTF-8"));
             gson.toJson(str,String.class,writer);
             writer.close();
+        }
+        if (actionType.equals("RatingCheck"))
+        {
+            String sTeamID = request.getParameter("TeamID");
+            int teamID = new Integer(sTeamID);
+            String sProjectID = request.getParameter("ProjectID");
+            int projectID = new Integer(sProjectID);
+            dbs.ratingUpdate(teamID,projectID);
         }
         /*else {
             String str = "Error";
